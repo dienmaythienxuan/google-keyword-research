@@ -1,0 +1,27 @@
+# Credentials (never commit)
+google-ads.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Generated keyword research outputs
+keyword-research/*
+!keyword-research/.gitkeep
+
+# Local editor / agent tooling
+.serena/
+.semble_index/
+
+# OS junk
+.DS_Store
+Thumbs.db

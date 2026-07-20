@@ -1,0 +1,4 @@
+interface:
+  display_name: "Google Keyword Research"
+  short_description: "Research Google Ads keyword ideas and metrics."
+  default_prompt: "Research keyword ideas with Google Ads KeywordPlanIdeaService for a topic, URL, language, and location."
