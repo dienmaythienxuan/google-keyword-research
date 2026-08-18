@@ -25,13 +25,26 @@ python scripts/get_refresh_token.py
 
 ## Chạy nghiên cứu từ khóa
 
-Mặc định: tiếng Việt (`1019`), Việt Nam (`2704`), mạng `GOOGLE_SEARCH_AND_PARTNERS`.
+Truyền quốc gia (`--country`, mã ISO-2 hoặc tên tiếng Anh) và ngôn ngữ (`--language`, mã ISO hoặc tên tiếng Anh). Script tự resolve sang ID Google Ads. Mạng mặc định: `GOOGLE_SEARCH_AND_PARTNERS`.
 
 ```bash
 python scripts/generate_keyword_ideas.py \
   --customer-id YOUR_CUSTOMER_ID \
   --keywords "quạt điện,quạt cây" \
+  --country VN \
+  --language vi \
   --output keyword-research/quat-dien.csv
+```
+
+Ví dụ thị trường khác:
+
+```bash
+python scripts/generate_keyword_ideas.py \
+  --customer-id YOUR_CUSTOMER_ID \
+  --keywords "air conditioner,inverter ac" \
+  --country "United States" \
+  --language en \
+  --output keyword-research/us-ac.csv
 ```
 
 Seed theo URL hoặc site:
@@ -40,11 +53,15 @@ Seed theo URL hoặc site:
 python scripts/generate_keyword_ideas.py \
   --customer-id YOUR_CUSTOMER_ID \
   --url https://example.com/quat-dien \
+  --country VN \
+  --language vi \
   --output keyword-research/from-url.csv
 
 python scripts/generate_keyword_ideas.py \
   --customer-id YOUR_CUSTOMER_ID \
   --site example.com \
+  --country VN \
+  --language vi \
   --limit 500 \
   --output keyword-research/from-site.csv
 ```
@@ -56,6 +73,8 @@ python scripts/generate_keyword_ideas.py \
   --customer-id YOUR_CUSTOMER_ID \
   --keywords "quạt điều hòa" \
   --url https://example.com/quat-dieu-hoa \
+  --country VN \
+  --language vi \
   --format json \
   --output keyword-research/combo.json
 ```

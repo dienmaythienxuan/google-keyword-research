@@ -32,13 +32,13 @@ Use these request fields to narrow results:
 - `keyword_annotation`
 - `historical_metrics_options`
 
+Pass `--country` and `--language` to `scripts/generate_keyword_ideas.py`. The script resolves them to Google Ads IDs before calling `GenerateKeywordIdeas`:
+
+- Country: ISO-2 code (`VN`, `US`, `TH`) via `geo_target_constant` search, or English name via `GeoTargetConstantService.SuggestGeoTargetConstants`.
+- Language: ISO code (`vi`, `en`, `th`) or English name via `language_constant` search.
+
+`--language-id` and `--location-ids` skip lookup and send resource IDs directly.
+
+Do not hardcode Vietnam/Vietnamese or US/English. Official language criterion IDs: https://developers.google.com/google-ads/api/data/codes-formats#languages
+
 The response supports pagination through the Google Ads client library.
-
-## Default IDs used in this repo
-
-| Target | Resource ID |
-| --- | --- |
-| Vietnamese language | `1019` |
-| Vietnam geo | `2704` |
-| English language | `1000` |
-| United States geo | `2840` |
